@@ -1,8 +1,9 @@
 import './App.css';
 import Login from './Components/Login'
 import { Routes, Route } from 'react-router-dom';
-import NavBar from "./Components/NavBar"
+import NavBar from "./Components/Navbar"
 import MainSearch from './Components/MainSearch';
+import HomePage from './Components/HomePage'
 
 
 function App() {

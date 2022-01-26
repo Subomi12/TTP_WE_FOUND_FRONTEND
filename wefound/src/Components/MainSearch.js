@@ -2,9 +2,12 @@ import React, { useState, useEffect } from "react";
 import dummyData from "../dummyData";
 import '../styles/MainSearch.css'
 
-function MainSearch(){
+function MainSearch(prop){
     const [products, setProducts] = useState([]);
-    let arr;
+    
+    
+
+
     function getProducts(event){
         event.preventDefault();
         setProducts(dummyData.map(data =>

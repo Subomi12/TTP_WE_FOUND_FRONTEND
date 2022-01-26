@@ -1,3 +1,4 @@
+
 import React, {useState} from 'react'
 import '../styles/Login.css'
 import Axios from "axios"
@@ -5,6 +6,7 @@ import oauth from 'axios-oauth-client'
 //import { Navigate } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom';
 import MainSearch from './MainSearch'
+
 
 export default function Login(){
     const navigate = useNavigate();
@@ -26,14 +28,14 @@ export default function Login(){
         return auth;
     }
 
-    console.log(process.env)
-
     async function handleSubmit(event){
         event.preventDefault();
         if(formElements.username === "username" && formElements.password === "password"){
             const { access_token } = await generateKey();
             //console.log(access_token);
-            navigate("/products")
+            navigate("/products", {
+                access: access_token
+            })
         }
     }
 
@@ -44,7 +46,6 @@ export default function Login(){
         }))
     }
 
-    
     return(
         <div>
             <h2>Login</h2>
