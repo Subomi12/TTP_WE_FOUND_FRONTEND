@@ -1,0 +1,42 @@
+.searchSection{
+    margin: 10px;
+}
+
+.searchSection input{
+    width: 300px;
+}
+
+.mainSearch{
+    display: flex;
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+.mainSearch select{
+    height: 20px;
+    margin-top: 10px;
+    margin-right: 5px;
+}
+
+.renderedImgs{
+    max-width: 100px;
+    height: 100px;
+}
+
+/* This is the div that holds all of the products */
+.renderedProducts{
+    margin-top: 15px;
+    display: grid;
+    grid-template-columns: 200px 200px 200px 200px 200px;
+    justify-content: center;
+}
+
+/* Each individual item with price and location */
+.eachItem{
+    margin: 10px;
+}
+
+.eachItem:hover{
+    border: white solid 4px;
+    
+}

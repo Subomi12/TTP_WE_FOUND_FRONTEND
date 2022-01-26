@@ -1,17 +1,17 @@
-import React from 'react'
-import Link from 'react-router-dom'
-import '../Styles/Navbar.css'
+import React from "react";
+import { Link } from "react-router-dom";
+import "../styles/Navbar.css"
 
-
-export default function Navbar(){
-    
+function NavBar(){
     return(
         <nav>
-            <h2>Logo</h2>
-            <h2>We Found</h2>
-            <Link to = "#">Cart</Link>
-            <Link to = "#">Favorites</Link>
-            <Link to = "#">Products</Link>
+            <Link className="logoArea" to="/products">WeFound</Link>
+            <Link className="cart" to="/">Cart</Link>
+            <Link className="Others" to="/">Favorites</Link>
+            <Link className="Others"  to="/">WishList</Link>
+            <Link className="Others"  to="/">Products</Link>
         </nav>
     )
 }
+
+export default NavBar

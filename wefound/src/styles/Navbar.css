@@ -1,0 +1,21 @@
+nav{
+    display: flex;
+    background-color:rgb(7, 73, 153);
+    padding: 10px;
+    
+}
+
+.logoArea{
+    margin-right: auto;
+    color:white;
+}
+
+.cart{
+    color: white;
+    margin-right: 10px;
+}
+
+.Others{
+    margin-right: 10px;
+    color: white;
+}
