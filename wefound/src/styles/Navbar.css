@@ -1,0 +1,14 @@
+nav{
+    display: flex;
+    background-color: lightblue;
+}
+
+nav>.logo{
+    float: left;
+    margin:auto;
+    margin-left:10px;
+}
+
+nav>.wefound{
+    margin-right: 10px;
+}

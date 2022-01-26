@@ -1,0 +1,23 @@
+div{
+    background-color: lightgrey;
+    margin-top:0 ;
+    padding: 10px;
+}
+
+
+.usernameInput{
+    border-style: solid;
+    border-radius: 15px;
+}
+
+.passwordInput{
+    border-style: solid;
+    border-radius: 15px;
+}
+
+button{
+    border-style: solid;
+    border-radius: 15px;
+    margin:10px;
+    padding:5px;
+}
