@@ -13,6 +13,7 @@ function App() {
       <Routes>
         <Route path="/login" element={<Login/>}></Route>
         <Route path="/products" element={<MainSearch/>}/>
+        <Route path="/Home" element={<HomePage/>}/>
       </Routes>
 
     </div>

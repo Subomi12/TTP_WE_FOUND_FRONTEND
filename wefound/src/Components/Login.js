@@ -3,7 +3,6 @@ import React, {useState} from 'react'
 import '../styles/Login.css'
 import Axios from "axios"
 import oauth from 'axios-oauth-client'
-//import { Navigate } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom';
 import MainSearch from './MainSearch'
 
@@ -15,27 +14,10 @@ export default function Login(){
         password:""
     })
 
-   async function generateKey(){
-       const getClientCredentials = oauth.client(Axios.create(), {
-            url: "https://api.kroger.com/v1/connect/oauth2/token",
-            grant_type: 'client_credentials',
-            client_id: process.env.REACT_APP_KROGER_CLIENTID,
-            client_secret: process.env.REACT_APP_KROGER_CLIENTSECRET,
-            scope: "product.compact"
-        })
-
-        var auth = await getClientCredentials()
-        return auth;
-    }
-
     async function handleSubmit(event){
         event.preventDefault();
         if(formElements.username === "username" && formElements.password === "password"){
-            const { access_token } = await generateKey();
-            //console.log(access_token);
-            navigate("/products", {
-                access: access_token
-            })
+            navigate("/products")
         }
     }
 
