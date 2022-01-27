@@ -1,0 +1,29 @@
+.div{
+    margin: 10px;
+}
+
+.cart{
+    text-align: left;
+    background-color: aliceblue;
+    padding:20px;
+    margin:0px; 
+}
+
+ul{
+    border:20px solid lightblue;
+    margin: 0;
+    margin-right: 10px;
+    font-size: 25px;
+    
+}
+
+.checkout{
+    padding: 12px;
+    margin: 10px;
+    border-style: solid;
+    border-radius: 15px;
+}
+
+.dropdown{
+    margin:5px;
+}
