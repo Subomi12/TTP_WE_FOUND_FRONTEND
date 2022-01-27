@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
 import dummyData from "../dummyData";
 import '../styles/MainSearch.css'
+import axios from 'axios'
 
 function MainSearch(prop){
     const [products, setProducts] = useState([]);
-    
-    
 
 
     function getProducts(event){
@@ -20,7 +19,6 @@ function MainSearch(prop){
             
             
         ))
-        console.log(arr);
     }
     
 
