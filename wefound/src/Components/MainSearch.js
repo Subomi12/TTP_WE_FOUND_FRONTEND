@@ -15,6 +15,7 @@ function MainSearch(props){
 
     const [products, setProducts] = useState(productHistory || []);
     const[searchTerm, setSearchTerm] = useState( lastSearch || "");
+    const[firstRun, setFirstRun] = useState(true)
     const [filiterState, setFilterState] = useState({
             ais:false,
             csp:false,
@@ -39,6 +40,7 @@ function MainSearch(props){
                     "Authorization" : `Bearer ${credentials.token}`
                 }
             });
+            setFirstRun(false)
             setProducts(res.data.data.data);
         } catch(error) {
             console.log(error)
@@ -162,7 +164,7 @@ return (
             </div>
             {!credentials && <h1 className="errorMsg1">Only logged in users can search for products</h1>}
         <div className="renderedProducts">
-            {elements.length > 0 ? elements :
+            {elements.length > 0 || firstRun ? elements :
                 <h1 className="errorMsg1">That search didn't match any products. Try another search.</h1>
 
             }

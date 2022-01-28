@@ -7,6 +7,7 @@ import HomePage from './Components/HomePage'
 import Product from './Components/Product';
 import SignUp from "./Components/SignUp"
 import React from "react";
+import Cart from "./Components/Cart";
 
 function App() {
 
@@ -24,6 +25,7 @@ function App() {
         <Route path="/product" element={<Product />}/>
         <Route path="/Home" element={<HomePage />}/>
         <Route path="/signup" element={<SignUp />}/>
+        <Route path="/cart" element={<Cart />} />
 
 
 

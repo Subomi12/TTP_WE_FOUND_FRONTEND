@@ -15,7 +15,7 @@ function Navbar(){
     return(
         <nav>
             <Link className="logoArea" to="/products">WeFound</Link>
-            <Link className="cart" to="/">Cart</Link>
+            <Link className="cart" to="../cart">Cart</Link>
             {/*<Link className="Others" to="/">Favorites</Link>*/}
             <Link className="Others" to="/products">Products</Link>
             <Link className="Others" to="../" onClick={logout}>{credentials ? "Logout" : "Login"}</Link>
