@@ -8,14 +8,17 @@ nav{
 .logoArea{
     margin-right: auto;
     color:white;
+    text-decoration: none;
 }
 
 .cart{
     color: white;
     margin-right: 10px;
+    text-decoration: none;
 }
 
 .Others{
     margin-right: 10px;
     color: white;
+    text-decoration: none;
 }

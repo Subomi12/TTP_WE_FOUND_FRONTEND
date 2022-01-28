@@ -11,7 +11,7 @@ function NavBar(){
             <Link className="cart" to="/">Cart</Link>
             <Link className="Others" to="/">Favorites</Link>
             <Link className="Others"  to="/products">Products</Link>
-            <Link className="Others"  to="/login">Login</Link>
+            <Link className="Others"  to="/">Login</Link>
         </nav>
         
     )
