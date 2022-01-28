@@ -1,0 +1,32 @@
+.product{
+    display: grid;
+    justify-content: center;
+}
+
+.cart-btn{
+    width: 200px;
+    padding: 5px;
+    background-color: rgb(7, 73, 153);
+    color: white;
+    font-size: large;
+    border-radius: 10px;
+    
+}
+
+.buyNow-btn{
+    width: 200px;
+    padding: 5px;
+    background-color: rgb(7, 73, 153);
+    color: white;
+    font-size: large;
+    border-radius: 10px;
+}
+
+.seperateLine{
+    width: 50%;
+}
+
+.productDetails{
+    margin: 10px;
+    margin-left: 20px;
+}

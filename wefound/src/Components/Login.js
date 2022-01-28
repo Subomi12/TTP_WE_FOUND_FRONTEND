@@ -29,14 +29,12 @@ export default function Login(){
     }
 
     return(
-        <div>
-            <h2>Login</h2>
+        <div className='loginDiv'> 
+            <h1>Login</h1>
             <form onSubmit={handleSubmit}>
-                <label>Username: </label>
-                <input name="username" onChange={handleChange} type = "text" value={formElements.username}/><br></br>
-                <label>Password: </label>
-                <input name='password' onChange={handleChange} type = "text"/><br></br>
-                <button type = "submit">Submit</button>
+                <input placeholder="Username..." name="username" onChange={handleChange} type = "text" value={formElements.username}/><br></br>
+                <input placeholder='Password...' name='password' onChange={handleChange} type = "text"/><br></br>
+                <center><button type = "submit">Login</button></center>
             </form>
         </div>
     )

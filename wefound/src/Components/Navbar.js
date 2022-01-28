@@ -10,8 +10,8 @@ function NavBar(){
             <Link className="logoArea" to="/products">WeFound</Link>
             <Link className="cart" to="/">Cart</Link>
             <Link className="Others" to="/">Favorites</Link>
-            <Link className="Others"  to="/">WishList</Link>
             <Link className="Others"  to="/products">Products</Link>
+            <Link className="Others"  to="/login">Login</Link>
         </nav>
         
     )
