@@ -40,7 +40,7 @@ export default function SignUp(props) {
         const databaseData = {...formElements, username: formElements.username.toLowerCase()}
 
         try {
-            const {data} = await Axios.post("http://localhost:8080/api/weFoundUsers/signup", {...databaseData})
+            const {data} = await Axios.post("https://we-found-backend.herokuapp.com/api/weFoundUsers/signup", {...databaseData})
             sessionStorage.setItem('credentials', JSON.stringify(data))
             navigate("/products")
         } catch (e) {

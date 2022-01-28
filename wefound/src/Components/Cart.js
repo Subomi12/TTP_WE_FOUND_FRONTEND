@@ -16,7 +16,7 @@ export default function Cart() {
     React.useEffect(function() {
         async function getCartItems() {
 
-            const { data } = await axios.get(`http://localhost:8080/api/weFoundUsers/${credentials.user.id}/cartItems`, {
+            const { data } = await axios.get(`https://we-found-backend.herokuapp.com/api/weFoundUsers/${credentials.user.id}/cartItems`, {
                 headers: {
                     "Authorization" : `Bearer ${credentials.token}`
                 }
@@ -36,14 +36,14 @@ export default function Cart() {
     }, [])
 
     async function removeCartItem(id) {
-        await axios.get(`http://localhost:8080/api/cartItems/${id}`, {
+        await axios.get(`https://we-found-backend.herokuapp.com/api/cartItems/${id}`, {
             headers: {
                 "Authorization" : `Bearer ${credentials.token}`
             }
         });
         async function getCartItems() {
 
-            const { data } = await axios.get(`http://localhost:8080/api/weFoundUsers/${credentials.user.id}/cartItems`, {
+            const { data } = await axios.get(`https://we-found-backend.herokuapp.com/api/weFoundUsers/${credentials.user.id}/cartItems`, {
                 headers: {
                     "Authorization" : `Bearer ${credentials.token}`
                 }

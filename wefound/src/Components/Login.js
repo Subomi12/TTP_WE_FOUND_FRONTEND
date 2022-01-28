@@ -30,7 +30,7 @@ export default function Login(props) {
         event.preventDefault();
 
         try {
-            const {data} = await Axios.post("http://localhost:8080/api/weFoundUsers/login", {...formElements})
+            const {data} = await Axios.post("https://we-found-backend.herokuapp.com/api/weFoundUsers/login", {...formElements})
             sessionStorage.setItem('credentials', JSON.stringify(data))
             navigate("/products")
         } catch(error) {

@@ -35,7 +35,7 @@ function MainSearch(props){
         sessionStorage.setItem("searchTerm", searchTerm)
 
         try {
-            const res = await axios.get(`http://localhost:8080/api/kroger/products?filter.locationId=01400943&filter.term=${searchTerm}`, {
+            const res = await axios.get(`https://we-found-backend.herokuapp.com/api/kroger/products?filter.locationId=01400943&filter.term=${searchTerm}`, {
                 headers: {
                     "Authorization" : `Bearer ${credentials.token}`
                 }

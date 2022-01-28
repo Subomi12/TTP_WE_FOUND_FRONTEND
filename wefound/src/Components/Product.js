@@ -14,7 +14,7 @@ function Product(prop){
     console.log(location)
     const credentials = JSON.parse(sessionStorage.getItem('credentials'))
     async function addItem(){
-        await axios.post(`http://localhost:8080/api/cartItems`, {
+        await axios.post(`https://we-found-backend.herokuapp.com/api/cartItems`, {
             ...location.state.wholeItem,
             weFoundUserId: credentials.user.id
         }, {
