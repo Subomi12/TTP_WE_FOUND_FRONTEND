@@ -108,7 +108,7 @@ body {
   background: linear-gradient(45deg, rgb(6, 112, 173) 20%, rgb(51, 180, 255) 100%);
   box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.1);
   color: white;
-  font-size: 25px;
+  font-size: 50px;
 }
 
 button:active {
@@ -119,4 +119,11 @@ button:active {
   color: red;
   font-weight: bold;
   font-size: 20px;
+}
+
+.errorMsg1 {
+  color: red;
+  font-weight: bold;
+  font-size: 20px;
+  margin-left: 20px;
 }

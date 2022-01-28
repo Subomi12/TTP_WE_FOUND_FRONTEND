@@ -6,18 +6,23 @@ import MainSearch from './Components/MainSearch';
 import HomePage from './Components/HomePage'
 import Product from './Components/Product';
 import SignUp from "./Components/SignUp"
-
+import React from "react";
 
 function App() {
+
+    // const [credentials, setCredentials] = React.useState()
+    //
+    // function userAlive(data) {
+    //     setCredentials(data)
+    // }
+
   return (
     <div className="App">
-      <Navbar/>
       <Routes>
-        <Route path="/login" element={<Login/>}></Route>
-        <Route path="/products" element={<MainSearch/>}/>
-
-        <Route path="/product" element={<Product/>}/>
-        <Route path="/Home" element={<HomePage/>}/>
+        <Route path="/" element={<Login />}></Route>
+        <Route path="/products" element={<MainSearch />}/>
+        <Route path="/product" element={<Product />}/>
+        <Route path="/Home" element={<HomePage />}/>
         <Route path="/signup" element={<SignUp />}/>
 
 

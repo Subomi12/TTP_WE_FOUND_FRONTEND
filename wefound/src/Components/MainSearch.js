@@ -4,26 +4,47 @@ import '../styles/MainSearch.css'
 import axios from 'axios'
 import Login from "./Login";
 import Products from "./Product";
-import { Link, useLocation } from 'react-router-dom';
+import {Link, useLocation, useNavigate} from 'react-router-dom';
+import Navbar from "./Navbar";
 
 
+function MainSearch(props){
 
-function MainSearch(prop){
-    const [products, setProducts] = useState([]);
-    const[searchTerm, setSearchTerm] = useState("");
+    const productHistory = JSON.parse(sessionStorage.getItem("products"))
+    const lastSearch = sessionStorage.getItem("searchTerm")
+
+    const [products, setProducts] = useState(productHistory || []);
+    const[searchTerm, setSearchTerm] = useState( lastSearch || "");
     const [filiterState, setFilterState] = useState({
             ais:false,
             csp:false,
             dth:false,
     })
-    
+
+    React.useEffect(function() {
+        sessionStorage.setItem("products", JSON.stringify(products))
+    }, [products])
+
+    const credentials = JSON.parse(sessionStorage.getItem('credentials'))
 
 
     async function getProducts(event){
         event.preventDefault();
 
-        const res = await axios.get(`http://localhost:8080/api/kroger/products?filter.locationId=01400943&filter.term=${searchTerm}`);
-        setProducts(res.data.data.data);
+        sessionStorage.setItem("searchTerm", searchTerm)
+
+        try {
+            const res = await axios.get(`http://localhost:8080/api/kroger/products?filter.locationId=01400943&filter.term=${searchTerm}`, {
+                headers: {
+                    "Authorization" : `Bearer ${credentials.token}`
+                }
+            });
+            setProducts(res.data.data.data);
+        } catch(error) {
+            console.log(error)
+
+        }
+
     }
     
 
@@ -48,7 +69,6 @@ function MainSearch(prop){
         
 return (
         <div className="eachItem">
-        
             <Link to={"/product"} state={{
                 img:getUrl(),
                 title: data.description,
@@ -101,44 +121,51 @@ return (
     //Rendering to the page
     return(
         <>
-        <div className="mainSearch">
-            <form className="searchSection" onSubmit={getProducts}>
-                <input type="text" onChange={(event)=> setSearchTerm(event.target.value)} value={searchTerm}/>
-                <button>Search</button>
-            </form>
+            <Navbar/>
+            <div className="mainSearch">
+                <form className="searchSection" onSubmit={getProducts}>
+                    <input type="text" onChange={(event)=> setSearchTerm(event.target.value)} value={searchTerm}/>
+                    <button>Search</button>
+                </form>
+                <div className="filters">
+                    <select name="FilterByLocation">
+                        <option> 0 to 5 miles</option>
+                        <option> 5 to 10 miles</option>
+                        <option> 10 to 20 miles</option>
+                    </select>
 
-        <select name="FilterByLocation">
-                <option> 0 to 5 miles</option>
-                <option> 5 to 10 miles</option>
-                <option> 10 to 20 miles</option>
-            </select>
+                    <select name="FilterByPrice">
+                        <option> $0.50 to $1.00</option>
+                        <option> $1.00 to $5.00</option>
+                        <option> $5.00 to $10.00</option>
+                    </select>
 
-            <select name="FilterByPrice">
-                <option> $0.50 to $1.00</option>
-                <option> $1.00 to $5.00</option>
-                <option> $5.00 to $10.00</option>
-            </select>
-
-            <select name="Sorts" onChange={sortByPrice}>
-                <option value = "0"> low to high</option>
-                <option value = "1"> high to low</option>
-            </select>
-
-
-            <div>
-            <form>
-                <input type="checkbox" name="ais" onChange={isChecked}></input>
-                <label>Available in Store</label><br/>
-                <input type="checkbox" name="dth"></input>
-                <label>Home delivery</label><br/>
-                <input type="checkbox" name="csp"></input>
-                <label>Curbside pickup</label>
-            </form>
+                    <select name="Sorts" onChange={sortByPrice}>
+                        <option value = "0"> low to high</option>
+                        <option value = "1"> high to low</option>
+                    </select>
+                </div>
+                <div className="filterFulfillment">
+                        <label class="container">Available in Store<br></br>
+                            <input className="checkbox" type="checkbox" name="ais" onChange={isChecked}></input>
+                            <span class="checkmark"></span>
+                        </label>
+                        <label className="container">Home delivery<br></br>
+                            <input className="checkbox" type="checkbox" name="dth"></input>
+                            <span className="checkmark"></span>
+                        </label>
+                        <label className="container">Curbside pickup<br></br>
+                            <input type="checkbox" name="csp"></input>
+                            <span className="checkmark"></span>
+                        </label>
+                </div>
             </div>
-        </div>
-
+            {!credentials && <h1 className="errorMsg1">Only logged in users can search for products</h1>}
         <div className="renderedProducts">
-            {elements}
+            {elements.length > 0 ? elements :
+                <h1 className="errorMsg1">That search didn't match any products. Try another search.</h1>
+
+            }
         </div>
         </>
     )
