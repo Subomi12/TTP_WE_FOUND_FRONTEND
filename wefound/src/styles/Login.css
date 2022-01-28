@@ -1,0 +1,25 @@
+.loginDiv{
+    display: grid;
+    justify-content: center;
+}
+
+.loginDiv h1{
+    text-decoration: underline;
+    color: rgb(7, 73, 153);
+    text-align: center;
+}
+
+.loginDiv input{
+    color: rgb(7, 73, 153);
+    margin-bottom: 5px;
+    width: 20em;
+    height: 2em;
+}
+
+.loginDiv button{
+    background-color: rgb(7, 73, 153);
+    color: white;
+    padding: 1px;
+    font-size: large;
+    border-radius: 6px;
+}

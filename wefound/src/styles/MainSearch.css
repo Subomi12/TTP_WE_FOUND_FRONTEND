@@ -19,15 +19,18 @@
 }
 
 .renderedImgs{
-    width: 100px;
-    height: 100px;
+    display: block;
+    max-width: 75%;
+    max-height: 50%;
+    width: auto;
+    /* height: auto; */
 }
 
 /* This is the div that holds all of the products */
 .renderedProducts{
     margin-top: 15px;
     display: grid;
-    grid-template-columns: 200px 200px 200px;
+    grid-template-columns: 400px 400px 400px;
     justify-content: center;
 }
 
