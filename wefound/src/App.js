@@ -5,6 +5,8 @@ import Navbar from "./Components/Navbar"
 import MainSearch from './Components/MainSearch';
 import SignUp from "./Components/SignUp"
 
+
+
 function App() {
   return (
     <div className="App">
@@ -13,6 +15,8 @@ function App() {
         <Route path="/login" element={<Login/>}></Route>
         <Route path="/products" element={<MainSearch/>}/>
         <Route path="/signup" element={<SignUp />}/>
+
+
       </Routes>
 
     </div>

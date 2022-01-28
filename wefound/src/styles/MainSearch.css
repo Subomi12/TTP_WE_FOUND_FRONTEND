@@ -19,7 +19,7 @@
 }
 
 .renderedImgs{
-    max-width: 100px;
+    width: 100px;
     height: 100px;
 }
 
@@ -27,7 +27,7 @@
 .renderedProducts{
     margin-top: 15px;
     display: grid;
-    grid-template-columns: 200px 200px 200px 200px 200px;
+    grid-template-columns: 200px 200px 200px;
     justify-content: center;
 }
 
