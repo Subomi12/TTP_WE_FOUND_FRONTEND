@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../styles/Navbar.css"
 
-function NavBar(){
+function Navbar(){
     return(
         <nav>
             <Link className="logoArea" to="/products">WeFound</Link>
@@ -14,4 +14,4 @@ function NavBar(){
     )
 }
 
-export default NavBar
+export default Navbar
